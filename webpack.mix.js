@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+// const { mix } = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +10,30 @@ const { mix } = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+// var webpackMerge = require('webpack-merge');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var commonConfig = require('./public/webpack.common.js');
+// var helpers = require('./public/helpers');
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+// module.exports = webpackMerge(commonConfig, {
+//   devtool: 'cheap-module-eval-source-map',
+
+//   output: {
+//     path: helpers.root('./public/dist'),
+//     publicPath: '/',
+//     filename: '[name].js',
+//     chunkFilename: '[id].chunk.js'
+//   },
+
+//   plugins: [
+//     new ExtractTextPlugin('[name].css')
+//   ],
+
+//   devServer: {
+//     historyApiFallback: true,
+//     stats: 'minimal'
+//   }
+// });
+
+/*正式华宁*/
+module.exports = require('./config/webpack.prod.js');
