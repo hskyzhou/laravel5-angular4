@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var helpers = require('./helpers');
+
 module.exports = {
   entry: {
     'polyfills': './resources/assets/angular/polyfills.ts',
@@ -20,7 +22,7 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: 'tsconfig.json' }
+            options: { configFileName: helpers.root('', 'tsconfig.json') }
           } , 'angular2-template-loader'
         ]
       },
@@ -34,12 +36,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: '/Users/zhouwen/PhpProjects/laravelAngular/resources/assets/angular/app',
+        exclude: helpers.root('resource/assets/angular/app'),
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       },
       {
         test: /\.css$/,
-        include: '/Users/zhouwen/PhpProjects/laravelAngular/resources/assets/angular/app',
+        include: helpers.root('resource/assets/angular/app'),
         loader: 'raw-loader'
       }
     ]
@@ -50,7 +52,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      'Users/zhouwen/PhpProjects/laravelAngular/resources/assets/angular', // location of your src
+      helpers.root('resource/assets/angular'), // location of your src
       {} // a map of your routes
     ),
 
