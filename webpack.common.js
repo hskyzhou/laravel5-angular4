@@ -48,6 +48,8 @@ module.exports = {
   },
 
   plugins: [
+    // new webpack.optimize.UglifyJsPlugin(),
+    
     // Workaround for angular/angular#11580
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
@@ -61,7 +63,7 @@ module.exports = {
     })
 
     // new HtmlWebpackPlugin({
-    //   template: 'src/index.html'
+    //   template : helpers.root('resource/views/index.blade.php')
     // })
   ]
 };
