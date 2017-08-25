@@ -16,6 +16,6 @@
 // });
 
 
-Route::get('/', function () {
+Route::any('/{param1?}/{param2?}/{param3?}', function () {
     return view('index');
 });
