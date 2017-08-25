@@ -37,7 +37,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('resource/assets/angular/app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        loader: ['to-string-loader'].concat(ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' }))
       },
       {
         test: /\.css$/,

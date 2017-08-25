@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"app.css","sourceRoot":""}
+{"version":3,"sources":["webpack:///./resources/assets/angular/app/app.component.css"],"names":[],"mappings":"AAAA;CACC,YAAY","file":"app.css","sourcesContent":[".hsky{\n\tcolor : red;\n}\n\n\n// WEBPACK FOOTER //\n// ./resources/assets/angular/app/app.component.css"],"sourceRoot":""}
